@@ -182,12 +182,22 @@ function responseJSON(data) {
     *   点击 **New repository variable**。
     *   Name: `VITE_PASS_THRESHOLD` | Value: `3`
     *   Name: `VITE_QUESTION_COUNT` | Value: `5`
-4.  **开启 Pages 权限**：
-    *   进入 **Settings** -> **Actions** -> **General**。
-    *   向下滚动到 **Workflow permissions**，勾选 **Read and write permissions** 并保存。
-5.  **触发部署**：
-    *   修改代码并 Push 到 `main` 或 `master` 分支，GitHub Actions 将自动开始构建。
-    *   构建完成后，在 **Settings** -> **Pages** 中查看您的网站链接（通常是 `https://您的用户名.github.io/仓库名/`）。
+4.  **开启 Pages 权限 (关键步骤)**：
+    *   在 GitHub 仓库页面，点击上方的 **Settings** (设置) ⚙️。
+    *   在左侧侧边栏找到 **Code and automation** -> **Actions** -> **General**。
+    *   向下滚动页面到底部，找到 **Workflow permissions** 区域。
+    *   选中 **Read and write permissions** (读写权限)。
+    *   点击 **Save** 保存。
+
+5.  **触发部署与查看**：
+    *   **触发**：将代码 Push 到 `main` 或 `master` 分支。
+    *   **查看进度**：点击仓库上方的 **Actions** 标签页，您应该能看到一个正在运行的工作流 (Workflow) "Deploy to GitHub Pages"。
+    *   **等待完成**：等待该工作流显示绿色对勾 ✅ (Success)。
+    *   **获取链接**：
+        1.  再次进入 **Settings** ⚙️。
+        2.  在左侧侧边栏点击 **Pages**。
+        3.  在页面顶部的提示框中，您会看到：`Your site is live at...`，点击该链接即可访问您的游戏！
+        4.  *(如果没看到链接，请检查 **Build and deployment** > **Source** 是否选择了 `Deploy from a branch`，且 **Branch** 选择了 `gh-pages`)*。
 
 ---
 

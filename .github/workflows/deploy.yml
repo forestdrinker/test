@@ -24,9 +24,11 @@ jobs:
           cache: 'npm'
 
       - name: Install Dependencies 🔧
+        working-directory: pixel-quiz
         run: npm ci
 
       - name: Build Project 🏗️
+        working-directory: pixel-quiz
         env:
           # 从 GitHub Secrets 获取环境变量，注入到构建中
           VITE_GOOGLE_APP_SCRIPT_URL: ${{ secrets.VITE_GOOGLE_APP_SCRIPT_URL }}
@@ -37,4 +39,4 @@ jobs:
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist # Vite 默认构建输出目录
+          folder: pixel-quiz/dist # Vite 默认构建输出目录
