@@ -36,6 +36,9 @@ jobs:
           VITE_QUESTION_COUNT: ${{ vars.VITE_QUESTION_COUNT }}
         run: npm run build
 
+      - name: Create .nojekyll to prevent Jekyll processing
+        run: touch pixel-quiz/dist/.nojekyll
+
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
