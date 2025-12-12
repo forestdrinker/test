@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --primary-color: #ff004d;
+  --secondary-color: #00e756;
+  --accent-color: #29adff;
+  --bg-color: #1d1b26;
+  --text-color: #fff1e8;
+  --border-color: #fff1e8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Press Start 2P', cursive;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  -webkit-font-smoothing: none;
+  image-rendering: pixelated;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root {
+  width: 100%;
+  max-width: 800px;
+  padding: 2rem;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  text-transform: uppercase;
+  text-shadow: 4px 4px 0px #000;
+  margin-bottom: 2rem;
+}
+
+button {
+  font-family: 'Press Start 2P', cursive;
+  background: var(--primary-color);
+  color: #fff;
+  border: 4px solid #fff;
+  padding: 15px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px #000;
+  transition: transform 0.1s, box-shadow 0.1s;
+  text-transform: uppercase;
+  margin: 10px;
+}
+
+button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000;
+}
+
+button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000;
+}
+
+button:disabled {
+  background: #555;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 4px 4px 0px #000;
+}
+
+input {
+  font-family: 'Press Start 2P', cursive;
+  background: #000;
+  color: #fff;
+  border: 4px solid #fff;
+  padding: 15px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.pixel-card {
+  border: 4px solid var(--border-color);
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 8px 8px 0px #000;
+  margin-bottom: 2rem;
+}
+
+.avatar-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.avatar-frame {
+  width: 150px;
+  height: 150px;
+  border: 4px solid #fff;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 4px 4px 0px #000;
+  overflow: hidden;
+}
+
+.avatar-frame img {
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 600px) {
+  .options-grid {
+    grid-template-columns: 1fr;
+  }
+}
